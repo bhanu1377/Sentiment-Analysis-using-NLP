@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+<meta charset="UTF-8">
+    
+<title>Cars Review</title>
+
+
+</head>
+
+<body style="background-color: #E5E6EB; padding: 5px">
+
+<div style="width: 100%; height: 90px; background-color: white>
+    
+<!--<img src="header-car.jpeg">
+   
+ <h2 style="text-shadow: 0px 0px 6px gba(146, 73, 73, 0.73);
+	color: #121111;
+	font-size: 40px; text-align: center">Sentiment analysis on pre-owned cars</h2>
+
+</div>
+
+<div>
+    {% load static %}
+   
+ <img src="{% static 'review/bk_car.jpeg' %}" alt="car-background" style="height: 350px; width: 100%">
+
+</div>
+
+
+<div id="form">
+   
+ <form class="form-options" action="submit" method="post">
+       
+ {% csrf_token %}
+
+        <br>
+<input type = "radio" id = "option_one" name = "car_option" value="1">Submit Review<br>
+        
+<input type = "radio" id = "option_two" name = "car_option" value="2">Get Rating<br>
+   <br> 
+<button class="btn btn-lg btn-primary btn-block" type="submit" style="{width: 400px; border-radius: 28px;
+  font-family: Arial;
+  color: #0d0c0d;
+  font-size: 20px;
+  background: #b1b5b8;
+  padding: 5px 12px 5px 12px} :hover {background: #3cb0fd;
+  text-decoration: none}">Submit</button>
+   
+ </form>
+</div>
+</body>
+</html>

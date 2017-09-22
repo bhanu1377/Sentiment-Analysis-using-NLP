@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Ratings</title>
+</head>
+<body style="background-color: #8F939F; font: 12px arial,verdana,sans-serif; margin:0px; padding: 5px">
+<div style="width: 100%; height: 50px">
+    <!--<img src="header-car.jpeg">-->
+    <h2 style="text-shadow: 0px 0px 6px gba(146, 73, 73, 0.73);
+	color: #121111;
+	font-size: 40px; text-align: center">Sentiment analysis on pre-owned cars</h2>
+</div>
+<div>
+    {% load static %}
+    <img src="{% static 'review/bk_car.jpeg' %}" alt="car-background" style="height: 350px; width: 100%">
+</div>
+
+<div id="form">
+    <form class="form-options" action="takereviewtwo" method="post">
+        {% csrf_token %}
+               <h2 class="form-signin-heading" style="width: 800px; margin-bottom: 20px">Please provide your options to view
+            recommendation</h2>
+        <label for="inputyear" class="control-label col-sm-2" style="font-family: Arial; font-size: 15px; width: 200px">Make Year:</label>
+        <select name="year2" id="inputyear" style="font-family: Arial; font-size: 15px; width: 200px">
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+        </select>
+        <br>
+        <label for="inputmake" class="control-label col-sm-2" style="font-family: Arial; font-size: 15px; width: 200px">Model:</label>
+        <select name="cars2" id="inputmake" style="font-family: Arial; font-size: 15px; width: 200px">
+
+            {% for car in all_cars %}
+            <li><option value="{{ car.car_name }}">{{ car.car_name }}</option> </li>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" style="{width: 400px; border-radius: 28px;
+  font-family: Arial;
+  color: #0d0c0d;
+  font-size: 20px;
+  background: #b1b5b8;
+  padding: 5px 12px 5px 12px} :hover {background: #3cb0fd;
+  text-decoration: none}">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
